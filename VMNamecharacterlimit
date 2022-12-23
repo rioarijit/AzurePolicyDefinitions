@@ -1,0 +1,76 @@
+{
+  "properties": {
+    "displayName": "VMNamecharacterlimit",
+    "policyType": "Custom",
+    "mode": "Indexed",
+    "parameters": {},
+    "policyRule": {
+      "if": {
+        "allOf": [
+          {
+            "field": "type",
+            "in": [
+              "Microsoft.Compute/virtualMachines"
+            ]
+          },
+          {
+            "not": {
+              "anyOf": [
+                {
+                  "field": "name",
+                  "match": "....."
+                },
+                {
+                  "field": "name",
+                  "match": "......"
+                },
+                {
+                  "field": "name",
+                  "match": "......."
+                },
+                {
+                  "field": "name",
+                  "match": "........"
+                },
+                {
+                  "field": "name",
+                  "match": "........."
+                },
+                {
+                  "field": "name",
+                  "match": ".........."
+                },
+                {
+                  "field": "name",
+                  "match": "..........."
+                },
+                {
+                  "field": "name",
+                  "match": "............"
+                },
+                {
+                  "field": "name",
+                  "match": "............."
+                },
+                {
+                  "field": "name",
+                  "match": ".............."
+                },
+                {
+                  "field": "name",
+                  "match": "..............."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "then": {
+        "effect": "deny"
+      }
+    }
+  },
+  "id": "/subscriptions/",
+  "type": "Microsoft.Authorization/policyDefinitions",
+  "name": "",
+}
